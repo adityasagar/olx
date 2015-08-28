@@ -1,0 +1,6 @@
+applications :
+- name : hack
+memory: 512M
+instance: 2
+path: dist/VzOlx.war
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
