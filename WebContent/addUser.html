@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add New User</title>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+<style type="text/css">
+.login{
+	background-color: #e0e0e0;
+	border-radius: 25px;
+}
+.title{
+	background-color: red;
+}
+.head{
+	font-size:50px;
+	color:red;
+}
+</style>
+<script>
+function clearForm(){
+	$('form').trigger('reset');
+}
+function validate(){
+	var name= document.getElementById('name').value;
+	var email= document.getElementById('email').value;
+	var phone= document.getElementById('number').value;
+	var pwd= document.getElementById('pwd').value;
+	var repwd= document.getElementById('repwd').value;
+	alert(name);
+	if(name==''){
+		alert("Please enter Your Name");
+		return;
+	}
+	if(email==''){
+		alert("Please enter Your Email id");
+		return;
+	}
+	 var numbers = /^[0-9]+$/; 
+	if(phone==''){
+		alert("Please enter Your Contact Number");
+		return;
+	}
+	if(isNaN(phone)) {
+		alert("Contact Number should be numeric only");
+		return;
+	}
+	if(pwd==''){
+		alert("Please enter Password");
+		return;
+	}
+	if(repwd!=pwd){
+		alert("Password and Repeat Passwords must be same");
+		return;
+	}
+	form.submit();
+}
+</script>
+</head>
+<body>
+<div>
+<table><tr><th><img src="img/VerizonLogo.png"/></th><th>&nbsp;&nbsp;&nbsp;&nbsp;<label class="head">Vz Classified</label></th></tr></table>
+<hr>
+</div>
+<div class="login" id="login">
+<span><h2 class="title">Just Spare a min to Join with Us!</h2></span>
+<form name='form' action="RegisterServlet" method="post">
+<table align="center" width="60%">
+<tr>
+<td align="center">
+<input type="text" name= "name" id="name" placeholder="Enter your Name"></td>
+</tr>
+<tr>
+<td align="center">
+<input type="text"  name= "email" id="email" placeholder="Enter your E-Mail ID"></td>
+</tr>
+<tr>
+<td align="center">
+<input type="text" name= "number" id="number" placeholder="Enter your Mobile Number"></td>
+</tr>
+<tr>
+<td align="center"><input id="pwd" type="password" name= "pwd" placeholder="Enter your Password"></td>
+</tr>
+<tr>
+<td align="center"><input type="password" id="repwd" name= "repwd" placeholder="Re-Enter your Password"></td>
+</tr>
+<tr>
+<td align="center"><input type="hidden" name ="flag" placeholder="Re-Enter your Password" value="register" ></td>
+</tr>
+<tr><td align="right"><input type="button" value="Sign Up" onClick='javascript:validate();'>
+<input type="button" value="Clear" onClick='javascript:clearForm();'></td></tr>
+</table>
+</form>
+</div>
+</body>
+</html>

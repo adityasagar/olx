@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Verizon O1X Portal</title>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+.login{
+	background-color: #e0e0e0;
+	border-radius: 25px;
+}
+.title{
+	background-color: red;
+}
+.head{
+	font-size:50px;
+	color:red;
+}
+#cat{
+	width:80%;
+	overflow:auto;
+	display:inline-block;
+}
+</style>
+<script>
+alert("as->"+$(userid));
+$(document).ready(function(){
+	
+	var scrollPos=$('#cat').scrollLeft();
+	alert(scrollPos);
+	$('#catLeft').on("click", function(){
+		$('#cat').animate({scrollLeft:'-=200'},1000);
+		scrollLeft=scrollLeft-200;
+	});
+	$('#catRight').on("click", function(){
+		$('#cat').animate({scrollLeft:'+=200'},1000);
+		scrollLeft=scrollLeft+200;
+	});
+});
+
+
+
+
+function signUp(){
+	window.location.replace("addUser.html");
+}
+</script>
+</head>
+<body>
+<div>
+<table><tr><th><img src="img/VerizonLogo.png"/></th><th>&nbsp;&nbsp;&nbsp;&nbsp;<label class="head">Vz Classified</label></th></tr></table>
+<hr>
+</div>
+<div class="login" id="login">
+<span><h2 class="title">Please Login to Proceed</h2></span>
+<form action="RegisterServlet" method="post">
+<input type="hidden" name="flag" value="login"/>
+<table align="center" width="60%">
+<tr><td align="center">
+<input type="text" name="email" placeholder="Enter your Email ID"></td></tr>
+<tr><td align="center"><input type="password" name="pwd" placeholder="Enter your Password"></td></tr>
+
+<tr><td align="right"><input type="submit" value="Login">
+<input type="button" value="Clear"></td></tr>
+<tr><td align="right"><label>Not a User Yet? <a href="javascript:signUp();">Sign Up Here</a></label></td></tr>
+</table>
+</form>
+</div>
+<div class="det">
+<div id="detHdr">
+<table width="100%">
+<tr><td width="50%"></td><td align="right"><a href="javascript:addProducts();">Add New Products</a></td><td align="right">ASEEM AISHWARYA<br><a href="javascript:viewUser();">View Profile</a></td></tr>
+</table>
+<hr>
+</div>
+<img id="catLeft" src="img/left.png" width="80" height="100">
+<div id="cat">
+<table>
+<tr>
+<td><img src="img/Electronics.png" width="300" height="150"></td>
+<td><img src="img/vehicles.jpg" width="300" height="150"></td>
+<td><img src="img/furnishing.jpg" width="300" height="150"></td>
+<td><img src="img/animals.jpg" width="300" height="150"></td>
+<td><img src="img/sports.jpg" width="300" height="150"></td>
+<td><img src="img/fashion.jpg" width="300" height="150"></td>
+<td><img src="img/kids.jpg" width="300" height="150"></td>
+<td><img src="img/service.png" width="300" height="150"></td>
+<td><img src="img/realEstate.gif" width="300" height="150"></td>
+<td><img src="img/other.png" width="300" height="150"></td>
+</tr>
+<tr>
+<td align="center">Electronics</td>
+<td align="center">Vehicles</td>
+<td align="center">Home & Furniture</td>
+<td align="center">Animals</td>
+<td align="center">Books,Sports & Hobbies</td>
+<td align="center">Fashion & Beauty</td>
+<td align="center">Kids & Baby Products</td>
+<td align="center">Services</td>
+<td align="center">Real Estate</td>
+<td align="center">Others</td>
+</tr>
+</table>
+</div>
+<img id="catRight" src="img/right.png" width="80" height="100">
+<div id="recent"></div>
+<div id="view"></div>
+</div>
+</body>
+</html>
