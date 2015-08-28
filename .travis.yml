@@ -1,2 +1,11 @@
 language: java
 script: ant main
+sudo: require
+deploy:
+   edge: true
+   provider: cloudfoundry
+   username: adityasagar1992@gmail.com
+   password: 1992ashu
+   api: https://api.run.pivotal.io
+   organization: hack
+   space: development
