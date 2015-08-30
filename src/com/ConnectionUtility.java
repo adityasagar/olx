@@ -8,7 +8,7 @@ public class ConnectionUtility {
 		try{
 		Class.forName("com.mysql.jdbc.Driver");
 
-conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vzolx","root", "root");}
+conn = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/ad_05e7fe6bd1f8e1c?user=b70e4174d40ce1&password=12ddc464");}
 		catch(Exception e){
 			e.printStackTrace();
 		}
@@ -18,7 +18,7 @@ return conn;
 		Class jdbcDriver = Class.forName("com.mysql.jdbc.Driver");
 		Driver driver = (Driver) jdbcDriver.newInstance();
 		DriverManager.registerDriver(driver);
-		Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","root");
+		Connection con= DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/ad_05e7fe6bd1f8e1c?user=b70e4174d40ce1&password=12ddc464");
 		return con;
 	}
 	
